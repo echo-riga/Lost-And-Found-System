@@ -14,17 +14,28 @@
         const facebookBtns = document.querySelectorAll('.facebookBtn');
 
         googleBtns.forEach(button => {
-            button.addEventListener('click', function(){
-                signInWithGoogle();
-            })
-        })
+            button.addEventListener('click', async function () {
+              const success = await signInWithGoogle();
+              if (success) {
+                alert('success');
+              } else {
+                alert('fail');
+              }
+            });
+          });
+          
 
         facebookBtns.forEach(button => {
-            button.addEventListener('click', function(){
-                signInWithFacebook();
-            })
-        })
-
+            button.addEventListener('click', async function () {
+              const success = await signInWithFacebook();
+              if (success) {
+                alert('success');
+              } else {
+                alert('fail');
+              }
+            });
+          });
+          
         twoPanelTransition(signinPanel, signupPanel, signupBtn);
         twoPanelTransition(signupPanel, signinPanel, signinBtn);
         twoPanelTransition(forgotpasswordPanel, signinPanel, signinBtn1);
@@ -64,3 +75,7 @@
                 }
             });
         });
+
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        myModal.show();
+        

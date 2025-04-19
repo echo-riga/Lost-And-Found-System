@@ -14,36 +14,33 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-export function signInWithFacebook() {
+export async function signInWithFacebook() {
   const provider = new FacebookAuthProvider();
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      const credential = FacebookAuthProvider.credentialFromResult(result);
-      const accessToken = credential.accessToken;
-      console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      const email = error.customData.email;
-      const credential = FacebookAuthProvider.credentialFromError(error);
-      console.log(error);
-    });
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+    console.log(user);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
 }
 
-export function signInWithGoogle() {
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;
-      console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      const email = error.customData.email;
-      const credential = GoogleAuthProvider.credentialFromError(error);
-    });
+export async function signInWithGoogle() {
+  const provider = new GoogleAuthProvider();
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const user = result.user;
+    console.log(user);
+    return true;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
 }
+
