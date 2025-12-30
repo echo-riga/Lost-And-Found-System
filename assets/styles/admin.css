@@ -1,0 +1,257 @@
+.dropdown-menu {
+  display: none; 
+}
+nav{
+  z-index: 10000;
+}
+.dropdown-menu {
+  display: none; 
+  position: absolute; 
+  z-index: 1050; 
+}
+main {
+  padding-top: 80px; 
+}     
+body.loading::before {
+  content: '';
+  position: fixed;
+  inset: 0;  /* This ensures the overlay spans the entire viewport */
+  background-color: rgba(0, 0, 0, 0.6); /* Solid color for debugging */
+  z-index: 2147483647; /* Max z-index to ensure it is on top */
+}
+
+/* Loading spinner */
+body.loading::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px; /* To center the spinner */
+  border: 6px solid yellow;
+  border-top: 6px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 2147483648; /* Slightly higher than the dark overlay */
+}
+.counter{
+  background-color: #f1f1f1;
+
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.breadcrumb {
+  z-index: 1; 
+}
+
+.dropdown-hover:hover > .dropdown-menu {
+  display: block;
+}
+
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+/* Hide all sections by default */
+section {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Fade effect */
+}
+
+/* Class for showing sections */
+.show-section {
+  display: block;
+  opacity: 1;
+}
+
+/* Add fade-in effect */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Add fade-out effect */
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+/* Keyframes for fade-in and fade-out */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.table, .table th, .table td {
+  background-color: transparent !important;
+}
+
+  /* Make the container wider */
+  .container {
+    width: 100% !important;
+    max-width: 1850px!important;
+    margin: 0 auto !important;
+}
+
+.contact-field {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    background-color: #ffffff;
+    color: #000;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  }
+  
+  .contact-field::placeholder {
+    color: #999;
+    transition: color 0.5s ease;
+  }
+  
+  
+  body.dark-mode .contact-field {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    border-color: white;
+  }
+  
+  body.dark-mode .contact-field::placeholder {
+    color: #ccc;
+  }
+  
+  
+
+body{
+  background-color: rgb(235, 238, 243) !important;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none !important;
+}
+#darkModeToggle{
+  padding: 5px;
+  background-color: #242525; /* Light background by default */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.moon-icon {
+  color: white;
+}
+
+.sun-icon {
+  color: yellow;
+}
+body.dark-mode #darkModeToggle {
+  background-color: #587597; /* Dark background in dark mode */
+  transform: rotate(180deg); /* Rotate the button for animation */
+}
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1;
+}
+body.dark-mode .icon{
+  color: #ffc107 !important;
+}
+body.dark-mode nav{
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+} 
+#adminName, nav, .icon, body, .panels{
+  transition: color 1s ease, background-color 1s ease;
+}
+body.dark-mode #adminName{
+  color: white !important;
+
+}
+body.dark-mode td,
+body.dark-mode th {
+  color: white !important;
+}
+
+body.dark-mode .dropdown-menu, body.dark-mode a{
+  background-color: #121212 !important;
+ color: #6c757d !important;
+}
+body.dark-mode .panels{
+  background-color: #1e1e1e !important;
+}
+.scrollable {
+  width: 100%; /* Or any fixed width */
+  height: 50vh; /* Or any fixed height */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
+body.dark-mode .explanation{
+  color: white;
+}
+/* Hide scrollbar in Webkit browsers (Chrome, Safari) */
+.scrollable::-webkit-scrollbar {
+  width: 0px; /* Hide scrollbar */
+  height: 0px; /* For horizontal scrollbar */
+}
+
+/* Hide scrollbar in Firefox */
+.scrollable {
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+
+        /* Timeline container */
+        .timeline {
+          position: relative;
+          width: 100%;
+          max-width: 100%;
+          padding: 40px 0;
+          border-left: 4px solid  #ffc107;
+        
+          
+      }
+
+      /* Timeline items */
+      .timeline-item {
+          position: relative;
+          margin-bottom: 40px;
+          padding-left: 40px;
+      }
+
+      /* Circle at each timeline point */
+      .timeline-item .circle {
+          width: 18px;
+          height: 18px;
+          background-color:  #ffc107;
+          border-radius: 50%;
+          position: absolute;
+          left: -9px;
+          top: 0;
+          border: 3px solid #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .description-cell {
+   
+       max-height: 50px;
+      }
+      
