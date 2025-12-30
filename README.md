@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Lost and Found System
 
 ## 📌 Overview
