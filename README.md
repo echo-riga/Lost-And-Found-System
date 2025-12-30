@@ -10,7 +10,7 @@ Modern web platform where users can post, browse, and manage lost and found item
 
 - Facebook and Google authentication
 - Item request states: pending, accepted matches, waiting
-- Modern, responsive design
+- Modern and user friendly design
 - Cloudinary integration for photo storage
 - Detailed item attributes (location, photos, descriptions)
 - Admin oversight and management
