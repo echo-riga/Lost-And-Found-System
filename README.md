@@ -1,12 +1,12 @@
 # Lost and Found System
 
-## 📌 Overview
+##  Overview
 
 Modern web platform where users can post, browse, and manage lost and found items with detailed attributes. Features a user-friendly interface with comprehensive item tracking and admin oversight.
 
 ---
 
-## ✨ Features
+##  Features
 
 - Facebook and Google authentication
 - Item request states: pending, accepted matches, waiting
@@ -17,7 +17,7 @@ Modern web platform where users can post, browse, and manage lost and found item
 
 ---
 
-## 🖼️ Screenshots
+##  Screenshots
 
 <p align="center">
   <img src="screenshots/screenshot1.png" width="32%" />
@@ -35,7 +35,7 @@ Modern web platform where users can post, browse, and manage lost and found item
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Component      | Technology |
 | -------------- | ---------- |
