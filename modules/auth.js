@@ -19,6 +19,7 @@ export async function signInWithFacebook() {
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
+<<<<<<< HEAD
 
     console.log('Facebook User Data:', user);  // Log all user data
 
@@ -30,6 +31,15 @@ export async function signInWithFacebook() {
   } catch (error) {
     console.error("Facebook Sign-in Error:", error);
     return null;
+=======
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+    console.log(user);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+>>>>>>> 620cb75143d6d5621a8f3cd11823098910f0ca37
   }
 }
 
@@ -37,6 +47,7 @@ export async function signInWithGoogle() {
   const provider = new GoogleAuthProvider();
   try {
     const result = await signInWithPopup(auth, provider);
+<<<<<<< HEAD
     const user = result.user;
 
 
@@ -57,3 +68,16 @@ export async function signInWithGoogle() {
     return null;  // Return null in case of an error
   }
 }
+=======
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const user = result.user;
+    console.log(user);
+    return true;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+}
+
+>>>>>>> 620cb75143d6d5621a8f3cd11823098910f0ca37

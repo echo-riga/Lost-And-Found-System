@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Lost and Found System
 
 ## 📌 Overview
@@ -48,3 +49,6 @@ Modern web platform where users can post, browse, and manage lost and found item
 ---
 
 > **Note:** This repository intentionally excludes setup instructions and sensitive configuration details due to confidentiality requirements.
+=======
+"# Lost-And-Found-System" 
+>>>>>>> 620cb75143d6d5621a8f3cd11823098910f0ca37
